@@ -1,0 +1,182 @@
+@charset "UTF8";
+
+
+@import url('https://fonts.googleapis.com/css2? family= Work+Sans:wght@500 & display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sem serifa;
+
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+header {
+    background-color: #0a0aa5;
+    width: 100%;
+}
+.logo .sociais {
+    width: 25%;
+
+}
+.logo img {
+    width: 100px;
+    cursor: pointer;
+}
+
+.menu {
+    width: 50%;
+}
+
+.menu nav ul {
+    display: inline-flex;
+}
+.menu nav a {
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+    padding-right: 40px;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.menu nav a:hover {
+    color: lightgray;
+}
+
+
+.menu nav a::after {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    content:" ";
+    width: 0px;
+    height: 4px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    transition: 0.7s;
+}
+
+
+.menu nav a:hover::after {
+    width: 45px;
+}
+
+.sociais button {
+    width: 40px;
+    height: 40px;
+    background-image: linear-gradient(45deg, #ff2500, #ff7100);
+    border: none;
+    border-radius: 8px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.sociais button i {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+/*menu mobile*/
+
+.menu-mobile {
+    background-color: #1d1d9869;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    height: 0vh;
+    visibility: hidden;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+
+.menu-mobile > nav > a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 20px 30px;
+    font-size: 1.1em;
+}
+
+.menu-mobile nav a:hover {
+    background-color: #1d1d9894;
+}
+
+.btn-menu {
+    border: 0px;
+    width: 40px;
+    height: 40px;
+    margin: 0px 10px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.7s ;
+    display: none;
+}
+
+.linha {
+    width: 25px;
+    height: 2px;
+    background-color: #cccccc;
+    display: block;
+    margin: 5px auto;
+    transform-origin: center;
+    transition: 0.7s;
+}
+
+
+button.ativar .linha:nth-child(1){
+    transform: translateY(6.8px) rotate(45deg);
+    background-color: red;
+    box-shadow: 0px 0px 3px 1px red;
+
+}
+
+
+button.ativar .linha:nth-child(2){
+    width: 0px;
+    background-color: red;
+}
+
+
+button.ativar .linha:nth-child(3){
+    transform: translateY(-6.8px) rotate(-45deg);
+    background-color: red;
+    box-shadow: 0px 0px 3px 1px red;
+}
+
+button.ativar{
+    border: 0.1px solid red;
+}
+
+@media screen and (max-width: 600px) {
+    .menu, .sociais {
+        display: none;
+    }
+    .logo {
+        width: 100%;
+    }
+
+    .menu-mobile.abrir {
+        visibility: visible;
+        height: calc(100vh - 54px);
+    }
+    .btn-menu{
+        display: block;
+    }
+}
